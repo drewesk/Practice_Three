@@ -45,7 +45,8 @@ bgImage.wrapS = bgImage.wrapT = THREE.RepeatWrapping;
 
 const material = new THREE.MeshPhongMaterial({
   color: 0xD5A118,
-  map: crate
+  map: crate,
+  wireframe: true
 });
 
 const crateMaterial = new THREE.MeshPhongMaterial({
@@ -60,7 +61,7 @@ const boardMaterial = new THREE.MeshPhongMaterial({
 
 const planeMaterial = new THREE.MeshLambertMaterial({
   map: ground
-})
+});
 
 var bg = new THREE.Mesh(
   new THREE.PlaneGeometry(2, 2, 0),
