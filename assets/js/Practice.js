@@ -89,18 +89,6 @@ const molecule = new THREE.Mesh(geometry4, material);
 const moleculeAlias = new THREE.Mesh(geometry8, material);
 const moleculeGlow = new THREE.Mesh(geometry7, material8);
 
-const sphere = new THREE.SphereBufferGeometry( 0.1, 32, 16 );
-				const sphereGlow = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-				for ( let i = 0; i < 100; i ++ ) {
-					let mesh = new THREE.Mesh( sphere, sphereGlow );
-					mesh.position.x = Math.random() * 20 - 2;
-					mesh.position.y = Math.random() * 11 - 9;
-					mesh.position.z = Math.random() * 11 - 2;
-					mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 3 + 1;
-					scene.add( mesh );
-					spheres.push( mesh );
-				}
-
 icos.position.z = -200;
 icos.position.x = 0;
 
@@ -137,6 +125,24 @@ scene.add(moleculeGlow);
 
 scene.add(icosAlias);
 scene.add(icos2Alias);
+const sphere = new THREE.SphereBufferGeometry(0.06, 32, 16);
+
+
+for (let i = 0; i < 600; i++) {
+
+  let randomColor = Math.random() * 0xffffff;//`#${Math.floor(Math.random()*16777215).toString(16)}`;
+
+  let sphereGlow = new THREE.MeshBasicMaterial({color: randomColor});
+  let mesh = new THREE.Mesh(sphere, sphereGlow);
+
+  mesh.position.x = Math.random() * 20 - 18;
+  mesh.position.y = Math.random() * 11 - 9;
+  mesh.position.z = Math.random() * 11 - 2;
+  mesh.scale.x = mesh.scale.y = Math.random() * 3 + 1;
+  mesh.scale.z = 20;
+  scene.add(mesh);
+  spheres.push(mesh);
+}
 
 camera.position.z = 30;
 

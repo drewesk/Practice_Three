@@ -63,7 +63,7 @@ const planeMaterial = new THREE.MeshLambertMaterial({
   map: ground
 });
 
-var bg = new THREE.Mesh(
+const bg = new THREE.Mesh(
   new THREE.PlaneGeometry(2, 2, 0),
   new THREE.MeshBasicMaterial({map: bgImage})
 );
@@ -72,8 +72,8 @@ var bg = new THREE.Mesh(
 bg.material.depthTest = false;
 bg.material.depthWrite = false;
 
-var bgScene = new THREE.Scene();
-var bgCam = new THREE.Camera();
+const bgScene = new THREE.Scene();
+const bgCam = new THREE.Camera();
 bgScene.add(bgCam);
 bgScene.add(bg);
 
